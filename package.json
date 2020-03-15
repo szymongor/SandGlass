@@ -1,0 +1,22 @@
+{
+  "name": "sandglass",
+  "version": "1.0.0",
+  "description": "SandGlass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szymongor/SandGlass.git"
+  },
+  "author": "SG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szymongor/SandGlass/issues"
+  },
+  "homepage": "https://github.com/szymongor/SandGlass#readme",
+  "dependencies": {
+    "p5": "^1.0.0"
+  }
+}
