@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/szymongor/SandGlass#readme",
   "dependencies": {
+    "matter-js": "^0.14.2",
     "p5": "^1.0.0"
   }
 }
