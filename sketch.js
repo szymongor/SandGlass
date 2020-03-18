@@ -6,20 +6,53 @@ var Engine = Matter.Engine,
 
 // create an engine
 var engine;
-var box1;
 var world;
+var boxes =[];
+
+var ground;
+var glassWalls = [];
 
 
 function setup() {
   createCanvas(400, 400);
   engine = Engine.create();
   world = engine.world;
-  box1 = Bodies.rectangle(200, 100, 80, 80);
+  ground = new Box(200, height, width, 20,{isStatic: true},120);
+
+  createWalls();
+  World.add(world, ground);
+
   Engine.run(engine);
-  World.add(world, box1);
+}
+
+function mouseDragged() {
+  boxes.push(new Box(mouseX,mouseY,7,7))
 }
 
 function draw() {
   background(40);
-  rect(box1.position.x, box1.position.y, 80,80);
+  boxes.forEach(e => {e.show()});
+  glassWalls.forEach(e => {e.show()});
+  ground.show();
+  // drawGround();
+
+
+}
+
+function drawGround() {
+  fill(170);
+  stroke(60);
+  rectMode(CENTER);
+  rect(200, height, width,20);
+}
+
+function createWalls() {
+  let wall1 = new Box(250, height/2, width/2, 20,{isStatic: true},120);
+  wall1.rotate(-1);
+
+  let wall2 = new Box(115, height/2, width/2, 20,{isStatic: true},120);
+  wall2.rotate(1);
+
+  glassWalls.push(wall1);
+  glassWalls.push(wall2);
 }
